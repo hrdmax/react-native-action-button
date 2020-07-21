@@ -82,6 +82,7 @@ const ActionButton = props => {
         {
           scale: anim.current.interpolate({
             inputRange: [0, 1],
+            useNativeDriver: false,
             outputRange: [1, props.outRangeScale]
           })
         },
@@ -184,7 +185,8 @@ const ActionButton = props => {
           {
             color: anim.current.interpolate({
               inputRange: [0, 1],
-              outputRange: [textColor, btnOutRangeTxt || textColor]
+              useNativeDriver: false,
+              outputRange: [textColor, btnOutRangeTxt || textColor],
             })
           }
         ]}
@@ -287,6 +289,7 @@ const ActionButton = props => {
           {
             backgroundColor: props.bgColor,
             opacity: anim.current.interpolate({
+              useNativeDriver: false,
               inputRange: [0, 1],
               outputRange: [0, props.bgOpacity]
             })
